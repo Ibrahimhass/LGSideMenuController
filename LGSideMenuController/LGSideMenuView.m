@@ -31,13 +31,13 @@
 
 @interface LGSideMenuView ()
 
-@property (strong, nonatomic) void (^layoutSubviewsHandler)(void);
+@property (strong, nonatomic) void (^layoutSubviewsHandler)();
 
 @end
 
 @implementation LGSideMenuView
 
-- (nonnull instancetype)initWithLayoutSubviewsHandler:(void(^ _Nonnull)(void))layoutSubviewsHandler {
+- (nonnull instancetype)initWithLayoutSubviewsHandler:(void(^ _Nonnull)())layoutSubviewsHandler {
     self = [super init];
     if (self) {
         self.layoutSubviewsHandler = layoutSubviewsHandler;

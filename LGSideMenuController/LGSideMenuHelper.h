@@ -32,7 +32,7 @@
 @interface LGSideMenuHelper : NSObject
 
 + (void)animateWithDuration:(NSTimeInterval)duration
-                 animations:(void(^)(void))animations
+                 animations:(void(^)())animations
                  completion:(void(^)(BOOL finished))completion;
 
 + (void)statusBarAppearanceUpdateAnimated:(BOOL)animated

@@ -91,6 +91,7 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 
 @property (strong, nonatomic) LGSideMenuBorderView *rootViewStyleView;
 @property (strong, nonatomic) UIVisualEffectView   *rootViewCoverView;
+@property (strong, nonatomic) UIButton   *cancelButton;
 
 @property (strong, nonatomic, readwrite) UIImageView *leftViewBackgroundView;
 @property (strong, nonatomic) UIVisualEffectView     *leftViewStyleView;
@@ -1249,6 +1250,20 @@ rightViewBackgroundImageFinalScale = _rightViewBackgroundImageFinalScale;
     [self stylesValidate];
     [self rootViewsTransformValidate];
     [self visibilityValidate];
+    
+    // _cancelButton = [UIButton ini]
+    _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+       [_cancelButton addTarget:self action:@selector(cancelButtonPresed:) forControlEvents:UIControlEventTouchUpInside];
+    [_cancelButton setImage:[UIImage imageNamed:@"cross.pdf"] forState:UIControlStateNormal];
+    _cancelButton.frame = CGRectMake(30, 60, 30, 30);
+    [[self.rootViewCoverView contentView] addSubview:_cancelButton];
+    
+ 
+
+}
+
+-(void)cancelButtonPresed:(id)sender{
+       [self hideRightViewAnimations];
 }
 
 - (void)setLeftViewController:(UIViewController *)leftViewController {

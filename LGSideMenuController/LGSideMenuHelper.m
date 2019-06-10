@@ -32,7 +32,7 @@
 @implementation LGSideMenuHelper
 
 + (void)animateWithDuration:(NSTimeInterval)duration
-                 animations:(void(^)(void))animations
+                 animations:(void(^)())animations
                  completion:(void(^)(BOOL finished))completion {
     [UIView animateWithDuration:duration
                           delay:0.0
